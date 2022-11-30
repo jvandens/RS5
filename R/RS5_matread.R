@@ -1,9 +1,15 @@
 library(mapview)
 
-file <- "C:/Users/jvandens/Downloads/01-Transect_20221123090339.mat"
+# source the function
+source("./R/get_RS5transect.R")
+
+file <- "./data/01-Transect_20221123090339.mat"
 
 sf <- get_RS5transect(file)
 
-mapview(df, zcol = "BT_Depth_VB")
+# plot
+mapview(sf, zcol = "BT_Depth_VB")
 
+# save
+sf::st_write(sf, "./output/transect.gpkg")
 
