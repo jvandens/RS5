@@ -43,3 +43,6 @@ vignettes/*.pdf
 
 #data
 /data/*.mat
+
+# output
+/output/*
